@@ -1,6 +1,8 @@
 "use client";
 import React, { useMemo } from 'react'
 import { usePathname } from "next/navigation";
+import { HiHome } from "react-icons/hi";
+import { BiSearch } from "react-icons/bi";
 
 interface SidebarProps{
   children: React.ReactNode;
@@ -13,11 +15,13 @@ const Sidebar: React.FC<SidebarProps> = ({
 
   const routes = useMemo(()=>[
     {
+      icon: HiHome,
       label: 'Home',
       active: pathname !== '/search',
       href: '/',
     },
     {
+      icon: BiSearch,
       label: 'Search',
       active: pathname === '/search',
       href: '/search',
@@ -25,8 +29,10 @@ const Sidebar: React.FC<SidebarProps> = ({
   ],[pathname]);
 
   return (
-    <div>
-      {children}
+    <div className='flex h-full'>
+      <div className='bg-black hidden md:flex flex-col gap-y-2 h-full w-[300px] p-2'>
+
+      </div>
     </div>
   )
 }
