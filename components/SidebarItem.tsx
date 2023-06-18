@@ -13,7 +13,7 @@ interface SidebarItemProps {
 }
 
 const SidebarItem: React.FC<SidebarItemProps> = ({
-  icon,
+  icon : Icon,
   label,
   active,
   href
@@ -25,7 +25,8 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
                      text-neutral-400 cursor-pointer hover:text-white transition py-1`,
                      active && "text-white")}
   >
-    SidebarItem
+    <Icon size={26}/>
+    <p className='truncate w-full'>{label}</p>
   </Link
 
   >
